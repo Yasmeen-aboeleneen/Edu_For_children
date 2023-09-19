@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:child_world/Home/HomeScreen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,7 +21,7 @@ class _SplashScreen1State extends State<SplashScreen1> {
   }
 
   void NavigateToHomeScreen() {
-    Future.delayed(const Duration(seconds: 9), () {
+    Future.delayed(const Duration(seconds: 10), () {
       Get.to(
         () => const HomeScreen(),
         transition: Transition.zoom,
@@ -36,54 +37,53 @@ class _SplashScreen1State extends State<SplashScreen1> {
         child: Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(15),
-          child: Column(
+      body: Stack(
+        children: [
+          Image.asset(
+            'Assets/Images/img2.jpeg',
+            fit: BoxFit.fill,
+            height: double.infinity,
+          ),
+          Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(
-                height: 50,
-              ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(200),
-                child: Image.asset(
-                  'Assets/Images/img2.jpeg',
-                ),
-              ),
-              SizedBox(
-                height: 30,
-              ),
               Center(
                 child: AnimatedTextKit(totalRepeatCount: 1, animatedTexts: [
-                  FadeAnimatedText('أهلاً بكَ في عالم الطفلِ',
+                  ScaleAnimatedText('أهلاً بكَ في عالم الطفلِ',
+                      duration: Duration(seconds: 2),
                       textStyle: TextStyle(
+                          color: Colors.white,
                           fontFamily: 'alfont_com_Parastoo-.ttf',
                           fontSize: 30,
                           fontWeight: FontWeight.bold),
                       textAlign: TextAlign.justify),
-                  FadeAnimatedText(
+                  ScaleAnimatedText(
                       'عالم الطفلِ يعملُ على إكسابِ طفلكَ أساسياتِ التعلمِ',
+                      duration: Duration(seconds: 2),
                       textStyle: TextStyle(
                           fontFamily: 'alfont_com_Parastoo-.ttf',
+                          color: Colors.white,
                           fontSize: 30,
                           fontWeight: FontWeight.bold),
                       textAlign: TextAlign.center),
-                  FadeAnimatedText('عالم الطفلِ يعملُ على تنميةِ مهاراتِ طفلكَ',
+                  ScaleAnimatedText(
+                      'عالم الطفلِ يعملُ على تنميةِ مهاراتِ طفلكَ',
+                      duration: Duration(seconds: 2),
                       textStyle: TextStyle(
                           fontFamily: 'alfont_com_Parastoo-.ttf',
                           fontSize: 30,
+                          color: Colors.white,
                           fontWeight: FontWeight.bold),
                       textAlign: TextAlign.center),
                 ]),
               ),
-              SizedBox(
-                height: 30,
-              ),
             ],
           ),
-        ),
+          SizedBox(
+            height: 30,
+          ),
+        ],
       ),
     ));
   }

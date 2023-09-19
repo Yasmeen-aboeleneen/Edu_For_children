@@ -76,6 +76,11 @@ flutter:
   assets:
     - Assets\Images\img1.png
     - Assets\Images\img2.jpeg
+    - Assets\Images\img3.jpeg
+    - Assets/Images/img4.jpeg
+    - Assets/Images/img5.jpeg
+    - Assets/Images/img6.jpeg
+    - Assets/Images/img7.jpg
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
